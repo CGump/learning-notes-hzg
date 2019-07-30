@@ -1,0 +1,13 @@
+{
+    "atomKeymap.promptV3Features": true,
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "python.pythonPath": "D:\\ProgramData\\Anaconda3\\envs\\hzg",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    //"workbench.colorTheme": "Visual Studio Dark",
+    "editor.rulers": [
+        120
+    ],
+    "explorer.confirmDelete": false,
+    "python.linting.enabled": false
+}
