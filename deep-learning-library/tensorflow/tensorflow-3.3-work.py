@@ -18,11 +18,11 @@ x = tf.placeholder(tf.float32, [None, 784])
 y = tf.placeholder(tf.float32, [None, 10])
 
 # 创建一个简单的神经网络
-W_1 = tf.Variable(tf.zeros([784, 1000]))
-b_1 = tf.Variable(tf.zeros([1000]))
+W_1 = tf.Variable(tf.zeros([784, 20]))
+b_1 = tf.Variable(tf.zeros([20]))
 p_1 = tf.nn.sigmoid(tf.matmul(x, W_1) + b_1)
 
-W_2 = tf.Variable(tf.zeros([1000, 10]))
+W_2 = tf.Variable(tf.zeros([20, 10]))
 b_2 = tf.Variable(tf.zeros([10]))
 prediction = tf.nn.softmax(tf.matmul(p_1 ,W_2) + b_2)
 
@@ -48,12 +48,12 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 with tf.Session() as sess:
     sess.run(init)
-    for epoch in range(21):
+    for epoch in range(201):
         for batch in range(n_batch):
             # 获得一个批次的图片和标签，每个批次是100张,每个批次不重复
             batch_xs,batch_ys = mnist.train.next_batch(batch_size)
-            sess.run(train_step, feed_dict={x:batch_xs, y:batch_ys})
-
+            sess.run([train_step], feed_dict={x:batch_xs, y:batch_ys})
+            # print(see_cp)
         acc = sess.run(accuracy, feed_dict={x:mnist.test.images, y:mnist.test.labels})
         print("Iter " + str(epoch) + ". Testing Accuracy " + str(acc))
 
