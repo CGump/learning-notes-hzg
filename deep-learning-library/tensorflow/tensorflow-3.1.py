@@ -1,6 +1,6 @@
 import tensorflow as tf
 print("check tensorflow version: ", tf.__version__)
-# tensorflow 线性回归
+# tensorflow 非线性回归
 
 import numpy as np
 import matplotlib.pyplot as plt 
