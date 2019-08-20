@@ -4,9 +4,10 @@
 # 目录
 * ## Python学习笔记
     * [星号（\*和**）的使用方法](python/python中easydict的使用.md)
-    * [esaydict()的简单使用方法](python/python中星号的用法.md)
+    * [`esaydict()`的简单使用方法](python/python中星号的用法.md)
     * [遍历文件夹中文件](python/python遍历文件夹中文件.md)
     * [jupyter-notebook设置conda环境](python/jupyter-notebook设置conda环境.md)
+    * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
 ---
 * ## MATLAB学习笔记
 ---
