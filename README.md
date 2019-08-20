@@ -25,6 +25,7 @@
         * [tensorflow 非线性回归](deep-learning-library/tensorflow/tensorflow-3.1.py)
         * [tensorflow softmax函数用法 手写数字识别](deep-learning-library/tensorflow/tensorflow-3.2.py)
         * [tensorflow MNIST数据集实战](deep-learning-library/tensorflow/tensorflow-3.3.py)
+        * [tensorflow 损失函数之交叉熵](deep-learning-library/tensorflow/tensorflow-4.1.py)
     * ### Keras
         * [keras 线性回归](deep-learning-library/keras/1_line_regression.py)
         * [keras 非线性回归](deep-learning-library/keras/2_nonlinear_regression.py)
