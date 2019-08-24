@@ -9,6 +9,7 @@
     * [jupyter-notebook设置conda环境](python/jupyter-notebook设置conda环境.md)
     * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
     * [yield和return的区别](python/yield和return的区别.md)
+    * [`lambda`表达式](python/lambda表达式.md)
 ---
 * ## MATLAB学习笔记
 ---
