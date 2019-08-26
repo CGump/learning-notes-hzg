@@ -4,7 +4,7 @@
 * 通过`enumerate()`函数进行排序和抽取，其结果为`序号, 名称`
 * 最后通过`for`循环控制进行遍历
 
-```
+```python
 import os
 for i,pic_name in enumerate(os.listdir(path)):
     name = pic_name.split('.')[0]

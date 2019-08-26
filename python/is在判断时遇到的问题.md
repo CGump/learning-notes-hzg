@@ -1,7 +1,7 @@
 # `is`关键符在进行比较判断时遇到的问题
 今天在比较两个字符串是否相等的时候，用`is`关键字进行了比较，但是发现相同的两个字符串比较结果竟然是`False`，经过查找后发现问题在于`is`关键字是用来判断是否是同一个**对象**，而不能单纯的用来判断两个字符串是否相同。下面是代码:
 
-```
+```python
 xml_path = './mAP/input/ground-truth-xml/'
 for i, image_ids in enumerate(os.listdir(xml_path)):
     image_id = image_ids.split('.')[0]

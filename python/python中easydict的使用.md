@@ -1,6 +1,6 @@
 # easydict库
 easydict的作用：可以使得以属性的方式去访问字典的值！
-```
+```python
 >>> from easydict import EasyDict as edict
 >>> d = edict({'foo':3, 'bar':{'x':1, 'y':2}})
 >>> d.foo
@@ -14,19 +14,19 @@ easydict的作用：可以使得以属性的方式去访问字典的值！
 ```
 
 也可以这样用，以属性的方式进行赋值！
-```
+```python
 >>> d = EasyDict()
 >>> d.foo = 3
 >>> d.foo
 3
 ```
-```
+```python
 >>> d = EasyDict(log=False)
 >>> d.debug = True
 >>> d.items()
 [('debug', True), ('log', False)]
 ```
-```
+```python
 >>> class Flower(EasyDict):
 ...     power = 1
 ...

@@ -33,7 +33,7 @@ $$ \sigma(z)_j = \frac {e^{z_j}}{\sum_{k=1}^Ke^{z_k}}  $$
 ## `tf.argmax()`函数
 
 在计算识别准确率的经常用到`tf.argmax()`函数，其作用是提取预测结果中准确率（概率）最大的元素在该维度的位置例如
-```
+```python
 import tensorflow as tf
 print("check tensorflow version: ", tf.__version__)
 
