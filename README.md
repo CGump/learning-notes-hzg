@@ -10,7 +10,7 @@
     * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
     * [yield和return的区别](python/yield和return的区别.md)
     * [`lambda`表达式](python/lambda表达式.md)
-    * ### Matplotlib使用方法
+    * Matplotlib使用方法
         * [matplotlib 使用方法](python/matplotlib/matplotlib的使用方法.ipynb)
         * [matplotlib 示例中文字体库](python/matplotlib/SimHei.ttf)
 ---
@@ -32,6 +32,9 @@
         * [tensorflow MNIST数据集实战](deep-learning-library/tensorflow/tensorflow-3.3.py)
         * [tensorflow 损失函数之交叉熵](deep-learning-library/tensorflow/tensorflow-4.1.py)
         * [tensorflow dropout](deep-learning-library/tensorflow/tensorflow-4.2.py)
+        * [tensorflow 优化器](deep-learning-library/tensorflow/tensorflow-4.3.py)
+        * [tensorflow MNIST数据集实战2](deep-learning-library/tensorflow/tensorflow-4.4-work.py)
+        * [tensorflow tensorboard网络结构绘制](deep-learning-library/tensorflow/tensorflow-5.1.py)
     * ### Keras
         * [keras 线性回归](deep-learning-library/keras/1_line_regression.py)
         * [keras 非线性回归](deep-learning-library/keras/2_nonlinear_regression.py)

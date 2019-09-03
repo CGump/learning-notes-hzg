@@ -6,7 +6,7 @@
 函数在执行到return的时候就停止，而遇到yield时能够持续不中断地获取函数的每个输出值。这一点很像labview中循环的通道，可以每循环一次输出一个值。
 
 return的案例：
-```
+```python
 def test():
     for i in range(5):
         return i
@@ -17,7 +17,7 @@ if __name__ == "__main__":
 >>>0
 ```
 yield的案例：
-```
+```python
 def yield_test():
     for i in range(5):
         yield call(i)  # 它会立即把call(i)输出，在main中的for循环中把值传递给n，
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 > **理解的关键在于：下次迭代时，代码从yield的下一跳语句开始执行.**  
 
 举一个简单的例子，定义一个迭代器generator，依次返回数字1，3，6：
-```
+```python
 def odd():
     print('step 1')
     yield 1
