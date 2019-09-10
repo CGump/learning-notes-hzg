@@ -8,8 +8,9 @@
     * [遍历文件夹中文件](python/python遍历文件夹中文件.md)
     * [jupyter-notebook设置conda环境](python/jupyter-notebook设置conda环境.md)
     * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
-    * [yield和return的区别](python/yield和return的区别.md)
+    * [`yield`和`return`的区别](python/yield和return的区别.md)
     * [`lambda`表达式](python/lambda表达式.md)
+    * [`assert`（断言）关键字.md](python/assert（断言）关键字.md)
     * Matplotlib使用方法
         * [matplotlib 使用方法](python/matplotlib/matplotlib的使用方法.ipynb)
         * [matplotlib 示例中文字体库](python/matplotlib/SimHei.ttf)
