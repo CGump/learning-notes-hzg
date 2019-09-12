@@ -61,3 +61,9 @@ git config --system --unset credential.helper
 git pull --rebase origin master 
 git push -u origin master
 ```
+## 6. .gitignore文件不起作用的解决办法
+原因是git在之前版本是已经记录的所需要忽略的文件，可以按照以下步骤调整
+1. `git rm -r --cached .` 删除本地的git缓存
+2. 修改.gitignore文件，列入要隐藏的文件名或路径
+3. `git add .`
+4. `git commit -m '上传调整记录'`
