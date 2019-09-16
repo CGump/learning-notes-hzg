@@ -11,9 +11,11 @@
     * [`yield`和`return`的区别](python/yield和return的区别.md)
     * [`lambda`表达式](python/lambda表达式.md)
     * [`assert`（断言）关键字.md](python/assert（断言）关键字.md)
-    * Matplotlib使用方法
-        * [matplotlib 使用方法](python/matplotlib/matplotlib的使用方法.ipynb)
-        * [matplotlib 示例中文字体库](python/matplotlib/SimHei.ttf)
+    * [python 基础](python/1-python基础.ipynb)
+    * [numpy 基础](python/2-numpy基础.ipynb)
+    * [matplotlib 使用方法](python/3-matplotlib的使用方法.ipynb)
+    * [matplotlib 示例中文字体库](python/SimHei.ttf)
+    * [pandas 基础](python/4-pandas基础.ipynb)
 ---
 * ## MATLAB学习笔记
 ---
