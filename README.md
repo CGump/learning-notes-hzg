@@ -16,6 +16,7 @@
     * [matplotlib 使用方法](python/3-matplotlib的使用方法.ipynb)
     * [matplotlib 示例中文字体库](python/SimHei.ttf)
     * [pandas 基础](python/4-pandas基础.ipynb)
+    * [python列表推导式](python/Python列表推导式.md)
 ---
 * ## MATLAB学习笔记
 ---
