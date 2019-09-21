@@ -18,6 +18,10 @@
     * [pandas 基础](python/4-pandas基础.ipynb)
     * [python列表推导式](python/Python列表推导式.md)
 ---
+* ## 数据结构
+    * 队列
+        * [队列结构python实现](data-structure/Queue/queue.py)
+---
 * ## MATLAB学习笔记
 ---
 * ## Linux使用方法
