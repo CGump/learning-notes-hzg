@@ -44,6 +44,8 @@
         * [tensorflow 优化器](deep-learning-library/tensorflow/tensorflow-4.3.py)
         * [tensorflow MNIST数据集实战2](deep-learning-library/tensorflow/tensorflow-4.4-work.py)
         * [tensorflow tensorboard网络结构绘制](deep-learning-library/tensorflow/tensorflow-5.1.py)
+        * [tensorflow tensorboard网络运行参数查看](deep-learning-library/tensorflow/tensorflow-5.2.py)
+        * [tensorflow tensorboard训练可视化](deep-learning-library/tensorflow/tensorflow-5.3.py)
     * ### Keras
         * [keras 线性回归](deep-learning-library/keras/1_line_regression.py)
         * [keras 非线性回归](deep-learning-library/keras/2_nonlinear_regression.py)
