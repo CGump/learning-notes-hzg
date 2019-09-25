@@ -83,7 +83,7 @@ loss = tf.reduce_mean(
 train_step = tf.train.AdamOptimizer(0.001).minimize(loss)
 
 prediction_2 = tf.nn.softmax(prediction)
-correct_prediction = (tf.equal(tf.argmax(prediction_2, 1), tf.argmax(y, 1)))
+correct_prediction = tf.equal(tf.argmax(prediction_2, 1), tf.argmax(y, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 with tf.Session() as sess:
