@@ -46,6 +46,8 @@
         * [tensorflow tensorboard网络结构绘制](deep-learning-library/tensorflow/tensorflow-5.1.py)
         * [tensorflow tensorboard网络运行参数查看](deep-learning-library/tensorflow/tensorflow-5.2.py)
         * [tensorflow tensorboard训练可视化](deep-learning-library/tensorflow/tensorflow-5.3.py)
+        * [tensorflow 卷积神经网络](deep-learning-library/tensorflow/tensorflow-6.1.py)
+        * [tensorflow 手写实现VGG16](deep-learning-library/tensorflow/tensorflow-VGG16.py)
     * ### Keras
         * [keras 线性回归](deep-learning-library/keras/1_line_regression.py)
         * [keras 非线性回归](deep-learning-library/keras/2_nonlinear_regression.py)

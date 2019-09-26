@@ -1,7 +1,5 @@
 import numpy as np
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
-from tensorflow.contrib.tensorboard.plugins import projector
 print("check tensorflow version: ", tf.__version__)
 # tensorflow 手写VGG16
 
