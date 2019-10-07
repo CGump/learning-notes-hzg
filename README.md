@@ -17,6 +17,7 @@
     * [matplotlib 示例中文字体库](python/SimHei.ttf)
     * [pandas 基础](python/4-pandas基础.ipynb)
     * [python列表推导式](python/Python列表推导式.md)
+    * [zip()与set()函数的用法](python/zip()与set()函数的用法.md)
 ---
 * ## 数据结构
     * 队列
