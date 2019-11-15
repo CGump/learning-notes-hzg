@@ -3,8 +3,8 @@
 
 # 目录
 * ## Python学习笔记
-    * [星号（\*和**）的使用方法](python/python中easydict的使用.md)
-    * [`esaydict()`的简单使用方法](python/python中星号的用法.md)
+    * [星号（\*和**）的使用方法](python/python中星号的用法.md)
+    * [`esaydict()`的简单使用方法](python/python中easydict的使用.md)
     * [遍历文件夹中文件](python/python遍历文件夹中文件.md)
     * [jupyter-notebook设置conda环境](python/jupyter-notebook设置conda环境.md)
     * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
@@ -21,6 +21,7 @@
 ---
 * ## 数据结构
     * 队列
+        * [队列基础](data-structure/Queue/队列.md)
         * [队列结构python实现](data-structure/Queue/queue.py)
 ---
 * ## MATLAB学习笔记
@@ -62,6 +63,7 @@
         * [keras 网络结构图绘制](deep-learning-library/keras/10_draw_network_structure.py)
     * ### openCV
         * [openCV 中文文档](deep-learning-library/openCV/OpenCV中文文档.pdf)
+        * [摄像头校正](deep-learning-library/openCV/cameraCalibration.py)
     * ### MXnet
 ---
 * ## 计算机视觉
