@@ -67,3 +67,8 @@ git push -u origin master
 2. 修改.gitignore文件，列入要隐藏的文件名或路径
 3. `git add .`
 4. `git commit -m '上传调整记录'`
+
+## 7. git拉取远程分支
+当在远程仓库新建一个分支时，由于本地的仓库还未同步，需要先同步再拉去，具体操作如下
+1. `git pull`拉取远程分支到本地
+2. `git checkout 分支名`切换本地仓库到新建的分支
