@@ -29,6 +29,7 @@
 * ## Linux使用方法
     * [linux后台运行](linux/linux后台运行.md)
     * [git操作指南](linux/git操作指南.md)
+    * [git指令同时关联两个远程仓库](linux/git指令同时关联两个远程仓库.md)
 ---
 * ## 深度学习库
     * ### Tensorflow
