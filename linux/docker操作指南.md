@@ -133,7 +133,7 @@ This message shows that your installation appears to be working correctly.
 
 
 ## 二. docker基础操作
-
+### 1. 常用指令
 * 构建
 ```
 docker build -f Dockerfile-base -t fruit:v1.0-alpha .
@@ -160,7 +160,22 @@ docker ps -a
 docker stop fruit
 ```
 
-## 2. 进入正在运行的docker容器
+* 删除Exited状态的docker 容器（container）
+
+```
+docker rm $(docker ps -a | grep Exited | awk '{print $1}')
+```
+
+* 删除docker镜像（image）
+
+```
+docker rmi [iamge/imageID]
+docker image rm [image/iamgeID]
+```
+
+
+
+### 2. 进入正在运行的docker容器
 
 * 进入正在运行的docker：
 
@@ -174,10 +189,45 @@ docker exec -it fruit /bin/sh
 Ctrl + P + Q
 ```
 
-## 3. 查看docker的日志
+### 3. 查看docker的日志
 
 docker运行日志通过以下命令查看
 
 ```
 docker logs -f fruit
 ```
+## 三、 本地镜像管理
+### 1. docker build命令
+
+**docker build **命令用于使用Dockerfile创建镜像
+
+语法：
+
+```
+docker build [OPTIONS] PATH | URL | -
+```
+
+docker常用的OPTIONS说明：
+
+* `-if`：指定要使用的dockerfile路径
+
+* `-t, -tag`：镜像的名字及标签，通常以name：tag或者name格式；在一次构建中为一个镜像设置多个标签。
+## 四、容器生命周期管理
+### 1. docker run命令
+
+**docker run **命令用于创建一个新的容器，并运行一个命令
+
+语法：
+
+```
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```
+
+* `-i`：以交互模式运行容器，通常与 -t 同时使用；
+* `-t`：为容器重新分配一个伪输入终端，通常与 -i 同时使用；
+* `-it`：为`-i`和`-t`的组合命令，以交互模式运行容器并分配一个伪输入终端；
+* `-d`：后台运行容器，并返回容器ID，一般后跟`镜像名：版本`；
+* `-p`： 指定端口映射，格式为：`主机(宿主)端口:容器端口`；
+* `--name=[name]`： 为容器指定一个名称；
+
+* `--rm`：容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 `docker rm` 。对于调试容器，不需要排障和保留结果，因此使用 `--rm` 可以避免浪费空间。  

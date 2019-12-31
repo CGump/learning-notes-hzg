@@ -1,0 +1,12 @@
+FROM python:3.7.6-stretch
+
+ENV TZ=Asia/shanghai
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
+    && apt-get update \
+    && apt-get install tzdata \
+    && dpkg-reconfigure --frontend noninteractive tzdata
+
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
+    && pip install --upgrade pip \
+    && pip install tensorflow
