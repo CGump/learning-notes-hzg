@@ -177,7 +177,7 @@ docker image rm [image/iamgeID]
 
 ### 2. 进入正在运行的docker容器
 
-* 进入正在运行的docker：
+* 进入正在运行的docker
 
 ```
 docker exec -it fruit /bin/sh
@@ -199,7 +199,7 @@ docker logs -f fruit
 ## 三、 本地镜像管理
 ### 1. docker build命令
 
-**docker build **命令用于使用Dockerfile创建镜像
+**docker build **命令用于使用Dockerfile创建镜像。
 
 语法：
 
@@ -229,5 +229,48 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 * `-d`：后台运行容器，并返回容器ID，一般后跟`镜像名：版本`；
 * `-p`： 指定端口映射，格式为：`主机(宿主)端口:容器端口`；
 * `--name=[name]`： 为容器指定一个名称；
-
 * `--rm`：容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 `docker rm` 。对于调试容器，不需要排障和保留结果，因此使用 `--rm` 可以避免浪费空间。  
+
+### 2. docker start/stop/restart 命令
+
+docker start：启动一个或多个已经被停止的容器
+
+docker stop：停止一个运行中的容器
+
+docker restart：重启容器
+
+语法：
+
+```
+docker start [OPTIONS] CONTAINER [CONTAINER...]
+docker stop [OPTIONS] CONTAINER [CONTAINER...]
+docker restart [OPTIONS] CONTAINER [CONTAINER...]
+```
+
+## 五、容器操作
+
+### 1. docker ps命令
+
+docker ps命令用于列出当前所有的docker容器。
+
+语法：
+
+```
+docker ps [OPTIONS]
+```
+
+* `-a`显示所有的容器，包括未运行的。
+
+* `-f`：根据条件过滤显示的内容。
+
+* `--format`：指定返回值的模板文件。
+
+* `-l`：显示最近创建的容器。
+
+* `-n`：列出最近创建的n个容器。
+
+* `--no-trunc`：不截断输出。
+
+* `-q`：静默模式，只显示容器编号。
+
+* `-s`：显示总的文件大小。
