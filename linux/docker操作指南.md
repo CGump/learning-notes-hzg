@@ -233,11 +233,11 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 ### 2. docker start/stop/restart 命令
 
-docker start：启动一个或多个已经被停止的容器
+**docker start**：启动一个或多个已经被停止的容器
 
-docker stop：停止一个运行中的容器
+**docker stop**：停止一个运行中的容器
 
-docker restart：重启容器
+**docker restart**：重启容器
 
 语法：
 
@@ -247,11 +247,35 @@ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 docker restart [OPTIONS] CONTAINER [CONTAINER...]
 ```
 
+### 3. docker exec命令
+
+**docker exec** 命令用于在运行中的容器执行命令
+
+语法：
+
+```
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+```
+
+* `-d`：分离模式: 在后台运行；
+* `-i`：即使没有附加也保持STDIN 打开；
+* `-t`：分配一个伪终端。
+
+例如进入一个正在运行容器内的bash命令行：
+
+```
+docker exec -it [name] /bin/bash
+docker exec -it [ID] /bin/bash
+```
+
+
+
+
 ## 五、容器操作
 
 ### 1. docker ps命令
 
-docker ps命令用于列出当前所有的docker容器。
+**docker ps**命令用于列出当前所有的docker容器。
 
 语法：
 
@@ -274,3 +298,13 @@ docker ps [OPTIONS]
 * `-q`：静默模式，只显示容器编号。
 
 * `-s`：显示总的文件大小。
+
+## 六、一些有意思的docker镜像
+
+### 1. jupyter notebook官方镜像
+
+```
+docker pull jupyter/datascience-notebook
+```
+
+2
