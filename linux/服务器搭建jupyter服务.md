@@ -96,3 +96,11 @@ jupyter notebook password
 ```
 
 输入两次密码，即可设置完成
+
+## 4. 服务器内安装pip包推荐使用不缓存和清华源拉取
+
+```
+!pip install --no-cache-dir tensorflow==2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+ 
