@@ -52,12 +52,16 @@ sudo apt-get install -y apt-transport-https ca-certificates curl software-proper
 
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+阿里源：
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
 ### 5. 设置stable存储库
 
 ```
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+阿里源：
+sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
 再次更新apt包索引：
