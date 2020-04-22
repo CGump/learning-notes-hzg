@@ -272,3 +272,239 @@ NOT不能单独使用，必须和其他查询条件组合使用，表示否定�
 
 ## 3. 聚合与排序
 
+### 3.1 聚合查询
+
+* 聚合函数
+
+COUNT： 计算表中的记录数（行数）
+SUM： 计算表中数值列中数据的合计值
+AVG： 计算表中数值列中数据的平均值
+MAX： 求出表中任意列中数据的最大值
+MIN： 求出表中任意列中数据的最小值  
+
+```sql
+SELECT COUNT(*)
+FROM Product;
+```
+
+COUNT函数的结果根据参数的不同而不同。 COUNT(*)会得到包含NULL的数据 行数，而COUNT(<列名>)会得到NULL之外的数据行数。
+
+* 计算合计值
+
+```sql
+SELECT SUM(sale_price), SUM(purchase_price)
+FROM Product;
+```
+
+对于 SUM 函数来说，即使包含 NULL，也可以计算出合计值。（所有聚合函数如果以列名为参数，在计算之前会把NULL值排除在外）
+
+* 计算平均值
+
+```sql
+SELECT AVG(sale_price)
+FROM Product;
+```
+
+* 计算最大/最小值
+
+```sql
+SELECT MAX(sale_price), MIN(purchase_price)
+FROM Product;
+```
+
+MAX/MIN函数几乎适用于所有数据类型的列。 SUM/AVG函数只适用于数值类型的列。  
+
+* 删除重复值（DISTINCT）
+
+```sql
+SELECT COUNT(DISTINCT product_type)
+FROM Product;
+```
+
+### 3.2 对表进行分组
+
+* GROUP BY子句
+
+```sql
+SELECT <列名1>, <列名2>, <列名3>, ……
+FROM <表名>
+GROUP BY <列名1>, <列名2>, <列名3>, ……;
+```
+
+GROUP BY 子句的书写位置也有严格要求，一定要写在FROM 语句之后（如果有 WHERE 子句的话需要写在 WHERE 子句之后）。  
+
+**注意：使用GROUP BY子句时， SELECT子句中不能出现聚合键之外的列名。**
+
+### 3.3 聚合结果指定条件
+
+* HAVING子句
+
+```
+SELECT <列名1>, <列名2>, <列名3>, ……
+FROM <表名>
+GROUP BY <列名1>, <列名2>, <列名3>, ……
+HAVING <分组结果对应的条件>
+```
+
+### 3.4 查询结果排序
+
+* ORDER BY子句
+
+```sql
+SELECT <列名1>, <列名2>, <列名3>, ……
+FROM <表名>
+ORDER BY <排序基准列1>, <排序基准列2>, ……
+```
+
+**注意：ORDER BY子句通常写在SELECT语句的末尾，默认升序。**
+
+* 指定升序或降序
+
+```sql
+SELECT product_id, product_name, sale_price, purchase_price
+FROM Product
+ORDER BY sale_price DESC;
+```
+
+降序关键字DESC，升序关键字ASC，在ORDER BY后使用
+
+* 可以在ORDER BY中使用别名
+
+```sql
+SELECT product_id AS id, product_name, sale_price AS sp, purchase_price
+FROM Product
+ORDER BY sp, id;
+```
+
+**注意：一定要记住 SELECT 子句的执行顺序在 GROUP BY 子句之后， ORDER BY 子句之前。  **
+
+* ORDER BY中可以使用的列
+
+在ORDER BY子句中可以使用SELECT子句中未使用的列和聚合函数。
+
+## 4. 数据更新
+
+### 4.1 数据的插入（INSERT）
+
+* INSERT基本语法
+
+```sql
+INSERT INTO <表名> (列1, 列2, 列3, ……) VALUES (值1, 值2, 值3, ……);  
+```
+
+**注意：对表进行全列 INSERT 时，可以省略表名后的列清单。这时 VALUES子句的值会默认按照从左到右的顺序赋给每一列。**  
+
+**注意：插入NULL值的列不能设置成NOT NULL约束。**
+
+* 插入默认值
+
+在创建表CREATE TABLE时使用了DEFAULT约束来设定默认值。此时可以在VALUES子句中指定DEFAULT关键字。
+
+```sql
+INSERT INTO ProductIns 
+(product_id, product_name, product_type, sale_price, purchase_price, regist_date) 
+VALUES ('0007', '擦菜板', '厨房用具', DEFAULT, 790, '2009-04-28');
+```
+
+设置默认值的列，在插入时也可以省略该列，系统会自动赋值。（没有默认值会设定为NULL）
+
+* 从其他表中复制数据：INSERT ... SELECT语句
+
+```sql
+-- 将商品表中的数据复制到商品复制表中
+INSERT INTO ProductCopy (product_id, product_name, product_type, sale_price, purchase_price, regist_date)
+SELECT product_id, product_name, product_type, sale_price, purchase_price, regist_date
+FROM Product;
+```
+
+**注意：INSERT语句的SELECT语句中，可以使用WHERE子句或者GROUP BY子句等任 何SQL语法（但使用ORDER BY子句并不会产生任何效果）。**
+
+### 4.2 数据删除（DELETE）
+
+* DROP TABLE和DELETE语句
+
+**DROP TABLE**可以将表完全删除，**DELETE**会留下表而删除表中的全部数据。
+
+* DELETE基本语法
+
+```sql
+DELETE FROM <表名>;
+```
+
+* 指定删除对象
+
+```sql
+DELETE FROM <表名>
+WHERE <条件>;
+```
+
+### 4.3 数据更新（UPDATE）
+
+* UPDATE基本语法
+
+```sql
+UPDATE <表名>
+SET <列名> = <表达式>;
+```
+
+* 指定条件UPDATE
+
+```sql
+UPDATE <表名>
+SET <列名> = <表达式>
+WHERE <条件>;
+```
+
+例如：
+
+```sql
+UPDATE Product
+SET sale_price = sale_price * 10
+WHERE product_type = '厨房用具';
+```
+
+* 更新为NULL
+
+```sql
+UPDATE Product
+SET regist_date = NULL
+WHERE product_id = '0008';
+```
+
+**注意：使用UPDATE语句可以将值清空为NULL（但只限于未设置NOT NULL约束的列）**。
+
+### 4.4 事务
+
+* 创建TRANSACTION
+
+```
+事务开始语句;
+DML语句①;
+DML语句②;
+DML语句③;
+.
+.
+.
+事务结束语句（COMMIT或者ROLLBACK）;
+```
+
+使用事务开始语句和事务结束语句，将一系列 DML 语句（INSERT/UPDATE/DELETE 语句）括起来，就实现了一个事务处理。  
+
+例如：
+
+```sql
+-- MySQL事务开始语句
+START TRANSACTION;
+-- 将运动T恤的销售单价降低1000日元
+UPDATE Product
+SET sale_price = sale_price - 1000
+WHERE product_name = '运动T恤';
+-- 将T恤衫的销售单价上浮1000日元
+UPDATE Product
+SET sale_price = sale_price + 1000
+WHERE product_name = 'T恤衫';
+COMMIT;
+```
+
+## 5. 复杂查询
+
