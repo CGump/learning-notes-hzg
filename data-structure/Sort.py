@@ -10,6 +10,16 @@
 # ================================================================
 
 
+def selection_sort(inputs: list):
+    for i in range(0, len(inputs)-1):
+        minimum = i
+        for j in range(i+1, len(inputs)):
+            if inputs[j] < inputs[minimum]:
+                minimum = j
+        inputs[i], inputs[minimum] = inputs[minimum], inputs[i]
+    return inputs
+
+
 def quick_sort(inputs: list):
     if len(inputs) < 2:
         return inputs
@@ -27,7 +37,7 @@ def quick_sort(inputs: list):
 def bubble_sort(inputs: list):
     lengths = len(inputs)
     while lengths > 0:
-        for i in range(0, len(inputs) - 1):
+        for i in range(0, len(inputs)-1):
             if inputs[i] > inputs[i+1]:
                 inputs[i], inputs[i+1] = inputs[i+1], inputs[i]
         lengths -= 1
@@ -38,4 +48,6 @@ if __name__ == '__main__':
     rst = quick_sort([3, 5, 1, 2, 4])
     print(rst)
     rst = bubble_sort([3, 5, 1, 2, 4])
+    print(rst)
+    rst = selection_sort([3, 5, 1, 2, 4])
     print(rst)
