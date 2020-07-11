@@ -3,33 +3,44 @@
 
 # 目录
 * ## Python学习笔记
-    * [星号（\*和**）的使用方法](python/python中星号的用法.md)
-    * [`esaydict()`的简单使用方法](python/python中easydict的使用.md)
-    * [遍历文件夹中文件](python/python遍历文件夹中文件.md)
-    * [jupyter-notebook设置conda环境](python/jupyter-notebook设置conda环境.md)
-    * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
-    * [`yield`和`return`的区别](python/yield和return的区别.md)
-    * [`lambda`表达式](python/lambda表达式.md)
-    * [`assert`（断言）关键字.md](python/assert（断言）关键字.md)
     * [python 基础](python/1-python基础.ipynb)
     * [numpy 基础](python/2-numpy基础.ipynb)
     * [matplotlib 使用方法](python/3-matplotlib的使用方法.ipynb)
-    * [matplotlib 示例中文字体库](python/SimHei.ttf)
     * [pandas 基础](python/4-pandas基础.ipynb)
+    * [flask 基础](python/5-flask学习笔记.ipynb)
+    * [面试经](python/面试经.md)
+    * [`assert`（断言）关键字.md](python/assert（断言）关键字.md)
+    * [`is`在判断时遇到的问题](python/is在判断时遇到的问题.md)
+    * [jupyter-notebook设置conda环境](python/jupyter-notebook设置conda环境.md)
+    * [lambda表达式](python/lambda表达式.md)
+    * [logging模块](python/logging模块.md)
+    * [遍历文件夹中文件](python/python遍历文件夹中文件.md)
     * [python列表推导式](python/Python列表推导式.md)
+    * [python中的魔法函数](python/python中的魔法函数.md)
+    * [python中的装饰器](python/python中的装饰器.md)
+    * [星号（\*和**）的使用方法](python/python中星号的用法.md)
+    * [`esaydict()`的简单使用方法](python/python中easydict的使用.md)
+    * [`yield`和`return`的区别](python/yield和return的区别.md)
+    * [`lambda`表达式](python/lambda表达式.md)
     * [zip()与set()函数的用法](python/zip()与set()函数的用法.md)
 ---
 * ## 数据结构
     * 队列
         * [队列基础](data-structure/Queue/队列.md)
         * [队列结构python实现](data-structure/Queue/queue.py)
+    * [排序算法](data-structure/Sort.py)
 ---
 * ## MATLAB学习笔记
 ---
 * ## Linux使用方法
+    * [服务器搭建jupyter服务](linux/服务器搭建jupyter服务.md)
+    * [数据库与SQL学习](linux/数据库与SQL学习.md)
+    * [docker操作指南](linux/docker操作指南.md)
+    * [Docker技术入门与实战](linux/Docker技术入门与实战 第2版.pdf)
     * [linux后台运行](linux/linux后台运行.md)
     * [git操作指南](linux/git操作指南.md)
     * [git指令同时关联两个远程仓库](linux/git指令同时关联两个远程仓库.md)
+    * [SQL基础教程（第2版）](linux/SQL基础教程（第2版）.pdf)
 ---
 * ## 深度学习库
     * ### Tensorflow
