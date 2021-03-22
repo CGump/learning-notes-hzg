@@ -134,7 +134,106 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
 
+### 8. 安装nvidia-docker2
 
+* 添加静态GPG密钥：
+
+  ```bash
+  distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+     && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+     && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+  ```
+
+  如果此使报告找不到有效的 OpenPGP 数据，多半是因为这个github.io的域名问题，打开https://github.io.ipaddress.com/网址，输入https://nvidia.github.io/nvidia-docker/gpgkey查询该网址的ip可以看到：
+
+  ```
+  185.199.108.153 nvidia.github.io
+  185.199.109.153 nvidia.github.io
+  185.199.110.153 nvidia.github.io
+  185.199.111.153 nvidia.github.io
+  ```
+
+  此时将上述信息复制到`/etc/hosts`文件尾端可以看到如下内容：
+
+  ```bash
+  $ cat /etc/hosts
+  127.0.0.1       localhost
+  127.0.1.1       ubuntu-desktop
+  185.199.108.153 nvidia.github.io
+  185.199.109.153 nvidia.github.io
+  185.199.110.153 nvidia.github.io
+  185.199.111.153 nvidia.github.io
+  
+  # The following lines are desirable for IPv6 capable hosts
+  ::1     ip6-localhost ip6-loopback
+  fe00::0 ip6-localnet
+  ff00::0 ip6-mcastprefix
+  ff02::1 ip6-allnodes
+  ff02::2 ip6-allrouters
+  ```
+
+  再次运行就可以了
+  
+* 更新apt-get
+  
+```bash
+  sudo apt-get update
+  ```
+  
+* 安装nvidia-docker2
+
+  ```
+  sudo apt-get install -y nvidia-docker2
+  ```
+
+* 重新启动docker以加载nvidia-docker2配置
+
+  ```bash
+  sudo systemctl restart docker
+  ```
+
+* 运行示例以检查nvidia-docker2是否安装成功
+
+  ```bash
+  sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+  ```
+
+  成功的话显示如下信息：
+
+  ```bash
+  Unable to find image 'nvidia/cuda:11.0-base' locally
+  11.0-base: Pulling from nvidia/cuda
+  54ee1f796a1e: Pull complete
+  f7bfea53ad12: Pull complete
+  46d371e02073: Pull complete
+  b66c17bbf772: Pull complete
+  3642f1a6dfb3: Pull complete
+  e5ce55b8b4b9: Pull complete
+  155bc0332b0a: Pull complete
+  Digest: sha256:774ca3d612de15213102c2dbbba55df44dc5cf9870ca2be6c6e9c627fa63d67a
+  Status: Downloaded newer image for nvidia/cuda:11.0-base
+  Mon Mar 22 07:52:21 2021
+  +-----------------------------------------------------------------------------+
+  | NVIDIA-SMI 450.102.04   Driver Version: 450.102.04   CUDA Version: 11.0     |
+  |-------------------------------+----------------------+----------------------+
+  | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+  | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+  |                               |                      |               MIG M. |
+  |===============================+======================+======================|
+  |   0  TITAN RTX           Off  | 00000000:3B:00.0  On |                  N/A |
+  | 41%   33C    P8    23W / 280W |    947MiB / 24217MiB |      4%      Default |
+  |                               |                      |                  N/A |
+  +-------------------------------+----------------------+----------------------+
+  
+  +-----------------------------------------------------------------------------+
+  | Processes:                                                                  |
+  |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+  |        ID   ID                                                   Usage      |
+  |=============================================================================|
+  +-----------------------------------------------------------------------------+
+  ```
+
+  
 
 ## 二. docker基础操作
 ### 1. 常用指令
@@ -176,8 +275,6 @@ docker rm $(docker ps -a | grep Exited | awk '{print $1}')
 docker rmi [iamge/imageID]
 docker image rm [image/iamgeID]
 ```
-
-
 
 ### 2. 进入正在运行的docker容器
 
